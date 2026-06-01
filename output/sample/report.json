@@ -1,0 +1,474 @@
+{
+  "project_id": "99942e0fa0b8",
+  "project_name": "Демо ВНИИМТ",
+  "reference_file": "egrul_reference.txt",
+  "generated_at": "2026-05-29T09:46:20.593980+00:00",
+  "documents": [
+    {
+      "filename": "egrul_reference.txt",
+      "role": "REFERENCE_EGRUL_OR_MASTER",
+      "stats": {
+        "filename": "egrul_reference.txt",
+        "size_bytes": 347,
+        "extension": ".txt",
+        "total_text_chars": 231
+      },
+      "facts": {
+        "inn": [
+          {
+            "fact_type": "inn",
+            "value": "7701234567",
+            "normalized_value": "7701234567",
+            "source_file": "egrul_reference.txt",
+            "location": "document",
+            "quote": "ИНН 7701234567",
+            "extraction_method": "regex:ИНН",
+            "confidence": 95
+          }
+        ],
+        "ogrn": [
+          {
+            "fact_type": "ogrn",
+            "value": "1027700123456",
+            "normalized_value": "1027700123456",
+            "source_file": "egrul_reference.txt",
+            "location": "document",
+            "quote": "ОГРН 1027700123456",
+            "extraction_method": "regex:ОГРН",
+            "confidence": 95
+          }
+        ],
+        "email": [
+          {
+            "fact_type": "email",
+            "value": "info@medtest.ru",
+            "normalized_value": "info medtest ru",
+            "source_file": "egrul_reference.txt",
+            "location": "document",
+            "quote": "Email: info@medtest.ru",
+            "extraction_method": "regex:email",
+            "confidence": 95
+          }
+        ],
+        "phone": [
+          {
+            "fact_type": "phone",
+            "value": "+7 (495) 123-45-67",
+            "normalized_value": "74951234567",
+            "source_file": "egrul_reference.txt",
+            "location": "document",
+            "quote": "Телефон: +7 (495) 123-45-67",
+            "extraction_method": "regex:phone",
+            "confidence": 95
+          }
+        ],
+        "nkmi_code": [
+          {
+            "fact_type": "nkmi_code",
+            "value": "120550",
+            "normalized_value": "120550",
+            "source_file": "egrul_reference.txt",
+            "location": "document",
+            "quote": "Код вида НКМИ 120550",
+            "extraction_method": "regex:НКМИ",
+            "confidence": 95
+          }
+        ],
+        "risk_class": [
+          {
+            "fact_type": "risk_class",
+            "value": "2а",
+            "normalized_value": "2а",
+            "source_file": "egrul_reference.txt",
+            "location": "document",
+            "quote": "Класс риска 2а",
+            "extraction_method": "regex:risk_class",
+            "confidence": 95
+          }
+        ],
+        "license": [],
+        "organization": [],
+        "address": [
+          {
+            "fact_type": "address",
+            "value": "Адрес: 123456, г. Москва, ул. Ленина, д. 1",
+            "normalized_value": "адрес 123456 г москва ул ленина д 1",
+            "source_file": "egrul_reference.txt",
+            "location": "document",
+            "quote": "Адрес: 123456, г. Москва, ул. Ленина, д. 1",
+            "extraction_method": "regex:address line",
+            "confidence": 95
+          }
+        ]
+      },
+      "text_preview": "Выписка из ЕГРЮЛ\nОбщество с ограниченной ответственностью \"МЕДТЕСТ\"\nИНН 7701234567\nОГРН 1027700123456\nАдрес: 123456, г. Москва, ул. Ленина, д. 1\nТелефон: +7 (495) 123-45-67\nEmail: info@medtest.ru\nКласс риска 2а\nКод вида НКМИ 120550"
+    },
+    {
+      "filename": "business_license.txt",
+      "role": "BUSINESS_LICENSE",
+      "stats": {
+        "filename": "business_license.txt",
+        "size_bytes": 267,
+        "extension": ".txt",
+        "total_text_chars": 183
+      },
+      "facts": {
+        "inn": [
+          {
+            "fact_type": "inn",
+            "value": "7701234567",
+            "normalized_value": "7701234567",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "ИНН: 7701234567",
+            "extraction_method": "regex:ИНН",
+            "confidence": 95
+          }
+        ],
+        "ogrn": [
+          {
+            "fact_type": "ogrn",
+            "value": "1027700123456",
+            "normalized_value": "1027700123456",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "ОГРН: 1027700123456",
+            "extraction_method": "regex:ОГРН",
+            "confidence": 95
+          }
+        ],
+        "email": [],
+        "phone": [
+          {
+            "fact_type": "phone",
+            "value": "+7 495 123-45-67",
+            "normalized_value": "74951234567",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Тел. +7 495 123-45-67",
+            "extraction_method": "regex:phone",
+            "confidence": 95
+          }
+        ],
+        "nkmi_code": [],
+        "risk_class": [],
+        "license": [
+          {
+            "fact_type": "license",
+            "value": "лицензия",
+            "normalized_value": "лицензия",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Бизнес лицензия",
+            "extraction_method": "regex:license line",
+            "confidence": 95
+          },
+          {
+            "fact_type": "license",
+            "value": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+            "normalized_value": "лицензия л041 01137 77 00300000 от 12 05 2025",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+            "extraction_method": "regex:license line",
+            "confidence": 95
+          }
+        ],
+        "organization": [
+          {
+            "fact_type": "organization",
+            "value": "ООО \"МЕДТЕСТ\" ИНН",
+            "normalized_value": "ооо \"медтест\" инн",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Выдана ООО \"МЕДТЕСТ\" ИНН: 7701234567",
+            "extraction_method": "regex:organization",
+            "confidence": 95
+          }
+        ],
+        "address": [
+          {
+            "fact_type": "address",
+            "value": "Адрес: город Москва, улица Ленина, дом 1",
+            "normalized_value": "адрес город москва улица ленина дом 1",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Адрес: город Москва, улица Ленина, дом 1",
+            "extraction_method": "regex:address line",
+            "confidence": 95
+          }
+        ]
+      },
+      "text_preview": "Бизнес лицензия\nЛицензия № Л041-01137-77/00300000 от 12.05.2025\nВыдана ООО \"МЕДТЕСТ\"\nИНН: 7701234567\nОГРН: 1027700123456\nАдрес: город Москва, улица Ленина, дом 1\nТел. +7 495 123-45-67"
+    }
+  ],
+  "verification_rows": [
+    {
+      "fact_type": "inn",
+      "checked_file": "business_license.txt",
+      "checked_value": "7701234567",
+      "reference_value": "7701234567",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "ИНН: 7701234567",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "egrul_reference.txt",
+        "location": "document",
+        "quote": "ИНН 7701234567",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "comment": "ИНН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "ogrn",
+      "checked_file": "business_license.txt",
+      "checked_value": "1027700123456",
+      "reference_value": "1027700123456",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "ОГРН: 1027700123456",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "egrul_reference.txt",
+        "location": "document",
+        "quote": "ОГРН 1027700123456",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "comment": "ОГРН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "organization",
+      "checked_file": "business_license.txt",
+      "checked_value": "ООО \"МЕДТЕСТ\" ИНН",
+      "reference_value": "",
+      "status": "missing_in_reference",
+      "score": 0,
+      "checked_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МЕДТЕСТ\" ИНН",
+        "normalized_value": "ооо \"медтест\" инн",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Выдана ООО \"МЕДТЕСТ\" ИНН: 7701234567",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "reference_evidence": null,
+      "comment": "Организация: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка."
+    },
+    {
+      "fact_type": "risk_class",
+      "checked_file": "business_license.txt",
+      "checked_value": "",
+      "reference_value": "2а",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "risk_class",
+        "value": "2а",
+        "normalized_value": "2а",
+        "source_file": "egrul_reference.txt",
+        "location": "document",
+        "quote": "Класс риска 2а",
+        "extraction_method": "regex:risk_class",
+        "confidence": 95
+      },
+      "comment": "Класс риска: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "nkmi_code",
+      "checked_file": "business_license.txt",
+      "checked_value": "",
+      "reference_value": "120550",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "nkmi_code",
+        "value": "120550",
+        "normalized_value": "120550",
+        "source_file": "egrul_reference.txt",
+        "location": "document",
+        "quote": "Код вида НКМИ 120550",
+        "extraction_method": "regex:НКМИ",
+        "confidence": 95
+      },
+      "comment": "НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "license",
+      "checked_file": "business_license.txt",
+      "checked_value": "лицензия",
+      "reference_value": "",
+      "status": "missing_in_reference",
+      "score": 0,
+      "checked_evidence": {
+        "fact_type": "license",
+        "value": "лицензия",
+        "normalized_value": "лицензия",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Бизнес лицензия",
+        "extraction_method": "regex:license line",
+        "confidence": 95
+      },
+      "reference_evidence": null,
+      "comment": "Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка."
+    },
+    {
+      "fact_type": "license",
+      "checked_file": "business_license.txt",
+      "checked_value": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+      "reference_value": "",
+      "status": "missing_in_reference",
+      "score": 0,
+      "checked_evidence": {
+        "fact_type": "license",
+        "value": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+        "normalized_value": "лицензия л041 01137 77 00300000 от 12 05 2025",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+        "extraction_method": "regex:license line",
+        "confidence": 95
+      },
+      "reference_evidence": null,
+      "comment": "Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка."
+    },
+    {
+      "fact_type": "address",
+      "checked_file": "business_license.txt",
+      "checked_value": "Адрес: город Москва, улица Ленина, дом 1",
+      "reference_value": "Адрес: 123456, г. Москва, ул. Ленина, д. 1",
+      "status": "possible_match",
+      "score": 77,
+      "checked_evidence": {
+        "fact_type": "address",
+        "value": "Адрес: город Москва, улица Ленина, дом 1",
+        "normalized_value": "адрес город москва улица ленина дом 1",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Адрес: город Москва, улица Ленина, дом 1",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "address",
+        "value": "Адрес: 123456, г. Москва, ул. Ленина, д. 1",
+        "normalized_value": "адрес 123456 г москва ул ленина д 1",
+        "source_file": "egrul_reference.txt",
+        "location": "document",
+        "quote": "Адрес: 123456, г. Москва, ул. Ленина, д. 1",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "comment": "Адресная строка: частичное совпадение (77%). Нужно проверить вручную: возможны сокращения, OCR или разные формулировки."
+    },
+    {
+      "fact_type": "phone",
+      "checked_file": "business_license.txt",
+      "checked_value": "+7 495 123-45-67",
+      "reference_value": "+7 (495) 123-45-67",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "phone",
+        "value": "+7 495 123-45-67",
+        "normalized_value": "74951234567",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Тел. +7 495 123-45-67",
+        "extraction_method": "regex:phone",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "phone",
+        "value": "+7 (495) 123-45-67",
+        "normalized_value": "74951234567",
+        "source_file": "egrul_reference.txt",
+        "location": "document",
+        "quote": "Телефон: +7 (495) 123-45-67",
+        "extraction_method": "regex:phone",
+        "confidence": 95
+      },
+      "comment": "Телефон: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "email",
+      "checked_file": "business_license.txt",
+      "checked_value": "",
+      "reference_value": "info@medtest.ru",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "email",
+        "value": "info@medtest.ru",
+        "normalized_value": "info medtest ru",
+        "source_file": "egrul_reference.txt",
+        "location": "document",
+        "quote": "Email: info@medtest.ru",
+        "extraction_method": "regex:email",
+        "confidence": 95
+      },
+      "comment": "Email: значение есть в эталоне, но не найдено в проверяемом документе."
+    }
+  ],
+  "summary": {
+    "reference_file": "egrul_reference.txt",
+    "documents_total": 2,
+    "verification_rows_total": 10,
+    "status_counts": {
+      "correct": 3,
+      "missing_in_reference": 3,
+      "missing_in_document": 3,
+      "possible_match": 1
+    },
+    "extracted_counts_by_file": {
+      "egrul_reference.txt": {
+        "inn": 1,
+        "ogrn": 1,
+        "email": 1,
+        "phone": 1,
+        "nkmi_code": 1,
+        "risk_class": 1,
+        "address": 1
+      },
+      "business_license.txt": {
+        "inn": 1,
+        "ogrn": 1,
+        "phone": 1,
+        "license": 2,
+        "organization": 1,
+        "address": 1
+      }
+    },
+    "human_status": "Есть отсутствующие значения: 6. Нужно уточнить пакет документов."
+  }
+}

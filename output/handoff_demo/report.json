@@ -1,0 +1,1193 @@
+{
+  "project_id": "20f1e720bdc8",
+  "project_name": "Demo handoff check",
+  "reference_file": "registration_application.txt",
+  "generated_at": "2026-05-29T13:42:52.124815+00:00",
+  "documents": [
+    {
+      "filename": "registration_application.txt",
+      "role": "REFERENCE_EGRUL_OR_MASTER",
+      "stats": {
+        "filename": "registration_application.txt",
+        "size_bytes": 552,
+        "extension": ".txt",
+        "total_text_chars": 341
+      },
+      "facts": {
+        "inn": [
+          {
+            "fact_type": "inn",
+            "value": "7701234567",
+            "normalized_value": "7701234567",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "ИНН 7701234567",
+            "extraction_method": "regex:ИНН",
+            "confidence": 95
+          }
+        ],
+        "ogrn": [
+          {
+            "fact_type": "ogrn",
+            "value": "1027700123456",
+            "normalized_value": "1027700123456",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "ОГРН 1027700123456",
+            "extraction_method": "regex:ОГРН",
+            "confidence": 95
+          }
+        ],
+        "email": [
+          {
+            "fact_type": "email",
+            "value": "info@medtech.example",
+            "normalized_value": "info medtech example",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "Email: info@medtech.example",
+            "extraction_method": "regex:email",
+            "confidence": 95
+          }
+        ],
+        "phone": [
+          {
+            "fact_type": "phone",
+            "value": "+7 495 123-45-67",
+            "normalized_value": "74951234567",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "Телефон: +7 495 123-45-67",
+            "extraction_method": "regex:phone",
+            "confidence": 95
+          }
+        ],
+        "nkmi_code": [
+          {
+            "fact_type": "nkmi_code",
+            "value": "123456",
+            "normalized_value": "123456",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "Код вида НКМИ: 123456",
+            "extraction_method": "regex:НКМИ",
+            "confidence": 95
+          }
+        ],
+        "risk_class": [
+          {
+            "fact_type": "risk_class",
+            "value": "2а",
+            "normalized_value": "2а",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "Класс риска: 2а",
+            "extraction_method": "regex:risk_class",
+            "confidence": 95
+          }
+        ],
+        "license": [],
+        "organization": [
+          {
+            "fact_type": "organization",
+            "value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+            "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 класс риска",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "Производитель: ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а",
+            "extraction_method": "regex:organization",
+            "confidence": 95
+          }
+        ],
+        "address": [
+          {
+            "fact_type": "address",
+            "value": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+            "normalized_value": "адрес производителя 115114 город москва улица примерная дом 1",
+            "source_file": "registration_application.txt",
+            "location": "document",
+            "quote": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+            "extraction_method": "regex:address line",
+            "confidence": 95
+          }
+        ]
+      },
+      "text_preview": "Заявление на регистрацию медицинского изделия\n\nНаименование медицинского изделия: Тонометр автоматический.\nПроизводитель: ООО \"МедТех Производство\".\nИНН 7701234567\nОГРН 1027700123456\nКласс риска: 2а\nКод вида НКМИ: 123456\nАдрес производителя: 115114, город Москва, улица Примерная, дом 1.\nТелефон: +7 495 123-45-67\nEmail: info@medtech.example"
+    },
+    {
+      "filename": "business_license.txt",
+      "role": "BUSINESS_LICENSE",
+      "stats": {
+        "filename": "business_license.txt",
+        "size_bytes": 267,
+        "extension": ".txt",
+        "total_text_chars": 183
+      },
+      "facts": {
+        "inn": [
+          {
+            "fact_type": "inn",
+            "value": "7701234567",
+            "normalized_value": "7701234567",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "ИНН: 7701234567",
+            "extraction_method": "regex:ИНН",
+            "confidence": 95
+          }
+        ],
+        "ogrn": [
+          {
+            "fact_type": "ogrn",
+            "value": "1027700123456",
+            "normalized_value": "1027700123456",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "ОГРН: 1027700123456",
+            "extraction_method": "regex:ОГРН",
+            "confidence": 95
+          }
+        ],
+        "email": [],
+        "phone": [
+          {
+            "fact_type": "phone",
+            "value": "+7 495 123-45-67",
+            "normalized_value": "74951234567",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Тел. +7 495 123-45-67",
+            "extraction_method": "regex:phone",
+            "confidence": 95
+          }
+        ],
+        "nkmi_code": [],
+        "risk_class": [],
+        "license": [
+          {
+            "fact_type": "license",
+            "value": "лицензия",
+            "normalized_value": "лицензия",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Бизнес лицензия",
+            "extraction_method": "regex:license line",
+            "confidence": 95
+          },
+          {
+            "fact_type": "license",
+            "value": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+            "normalized_value": "лицензия л041 01137 77 00300000 от 12 05 2025",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+            "extraction_method": "regex:license line",
+            "confidence": 95
+          }
+        ],
+        "organization": [
+          {
+            "fact_type": "organization",
+            "value": "ООО \"МЕДТЕСТ\" ИНН",
+            "normalized_value": "ооо \"медтест\" инн",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Выдана ООО \"МЕДТЕСТ\" ИНН: 7701234567",
+            "extraction_method": "regex:organization",
+            "confidence": 95
+          }
+        ],
+        "address": [
+          {
+            "fact_type": "address",
+            "value": "Адрес: город Москва, улица Ленина, дом 1",
+            "normalized_value": "адрес город москва улица ленина дом 1",
+            "source_file": "business_license.txt",
+            "location": "document",
+            "quote": "Адрес: город Москва, улица Ленина, дом 1",
+            "extraction_method": "regex:address line",
+            "confidence": 95
+          }
+        ]
+      },
+      "text_preview": "Бизнес лицензия\nЛицензия № Л041-01137-77/00300000 от 12.05.2025\nВыдана ООО \"МЕДТЕСТ\"\nИНН: 7701234567\nОГРН: 1027700123456\nАдрес: город Москва, улица Ленина, дом 1\nТел. +7 495 123-45-67"
+    },
+    {
+      "filename": "oem_contract.txt",
+      "role": "OEM_SITE",
+      "stats": {
+        "filename": "oem_contract.txt",
+        "size_bytes": 712,
+        "extension": ".txt",
+        "total_text_chars": 468
+      },
+      "facts": {
+        "inn": [
+          {
+            "fact_type": "inn",
+            "value": "7701234567",
+            "normalized_value": "7701234567",
+            "source_file": "oem_contract.txt",
+            "location": "document",
+            "quote": "Российский производитель: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+            "extraction_method": "regex:ИНН",
+            "confidence": 95
+          }
+        ],
+        "ogrn": [
+          {
+            "fact_type": "ogrn",
+            "value": "1027700123456",
+            "normalized_value": "1027700123456",
+            "source_file": "oem_contract.txt",
+            "location": "document",
+            "quote": "Российский производитель: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+            "extraction_method": "regex:ОГРН",
+            "confidence": 95
+          }
+        ],
+        "email": [
+          {
+            "fact_type": "email",
+            "value": "oem@example.com",
+            "normalized_value": "oem example com",
+            "source_file": "oem_contract.txt",
+            "location": "document",
+            "quote": "Email: oem@example.com",
+            "extraction_method": "regex:email",
+            "confidence": 95
+          }
+        ],
+        "phone": [
+          {
+            "fact_type": "phone",
+            "value": "+7 495 123-45-67",
+            "normalized_value": "74951234567",
+            "source_file": "oem_contract.txt",
+            "location": "document",
+            "quote": "Phone: +7 495 123-45-67",
+            "extraction_method": "regex:phone",
+            "confidence": 95
+          }
+        ],
+        "nkmi_code": [],
+        "risk_class": [],
+        "license": [],
+        "organization": [
+          {
+            "fact_type": "organization",
+            "value": "ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Иностранная производственная площадка",
+            "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 иностранная производственная площадка",
+            "source_file": "oem_contract.txt",
+            "location": "document",
+            "quote": "Российский производитель: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Иностранная производственная площадка: Shenzhen Medical Devices Factory Ltd.",
+            "extraction_method": "regex:organization",
+            "confidence": 95
+          },
+          {
+            "fact_type": "organization",
+            "value": "Ltd. Адрес производственной площадки",
+            "normalized_value": "ltd адрес производственной площадки",
+            "source_file": "oem_contract.txt",
+            "location": "document",
+            "quote": "Иностранная производственная площадка: Shenzhen Medical Devices Factory Ltd. Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+            "extraction_method": "regex:organization",
+            "confidence": 95
+          }
+        ],
+        "address": [
+          {
+            "fact_type": "address",
+            "value": "Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+            "normalized_value": "адрес производственной площадки 48 hakgam daero 221 beon gil busan republic of korea",
+            "source_file": "oem_contract.txt",
+            "location": "document",
+            "quote": "Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+            "extraction_method": "regex:address line",
+            "confidence": 95
+          }
+        ]
+      },
+      "text_preview": "OEM AGREEMENT / Соглашение OEM\n\nСтороны договора:\nРоссийский производитель: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.\nИностранная производственная площадка: Shenzhen Medical Devices Factory Ltd.\nАдрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.\nEmail: oem@example.com\nPhone: +7 495 123-45-67\n\nДоговор подтверждает производство медицинского изделия на иностранной площадке по заказу российского производителя."
+    },
+    {
+      "filename": "lease_agreement.txt",
+      "role": "LEASE_AGREEMENT",
+      "stats": {
+        "filename": "lease_agreement.txt",
+        "size_bytes": 504,
+        "extension": ".txt",
+        "total_text_chars": 301
+      },
+      "facts": {
+        "inn": [
+          {
+            "fact_type": "inn",
+            "value": "7701234567",
+            "normalized_value": "7701234567",
+            "source_file": "lease_agreement.txt",
+            "location": "document",
+            "quote": "Арендатор: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+            "extraction_method": "regex:ИНН",
+            "confidence": 95
+          }
+        ],
+        "ogrn": [
+          {
+            "fact_type": "ogrn",
+            "value": "1027700123456",
+            "normalized_value": "1027700123456",
+            "source_file": "lease_agreement.txt",
+            "location": "document",
+            "quote": "Арендатор: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+            "extraction_method": "regex:ОГРН",
+            "confidence": 95
+          }
+        ],
+        "email": [],
+        "phone": [],
+        "nkmi_code": [],
+        "risk_class": [],
+        "license": [],
+        "organization": [
+          {
+            "fact_type": "organization",
+            "value": "ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Адрес производственного помещения",
+            "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 адрес производственного помещения",
+            "source_file": "lease_agreement.txt",
+            "location": "document",
+            "quote": "Арендатор: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+            "extraction_method": "regex:organization",
+            "confidence": 95
+          }
+        ],
+        "address": [
+          {
+            "fact_type": "address",
+            "value": "Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+            "normalized_value": "адрес производственного помещения 115114 город москва улица примерная дом 1",
+            "source_file": "lease_agreement.txt",
+            "location": "document",
+            "quote": "Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+            "extraction_method": "regex:address line",
+            "confidence": 95
+          }
+        ]
+      },
+      "text_preview": "Договор аренды производственного помещения\n\nАрендатор: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.\nАдрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.\nНазначение помещения: производство медицинских изделий.\nСрок договора аренды: 01.01.2026 - 31.12.2026."
+    }
+  ],
+  "verification_rows": [
+    {
+      "fact_type": "inn",
+      "checked_file": "business_license.txt",
+      "checked_value": "7701234567",
+      "reference_value": "7701234567",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "ИНН: 7701234567",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "ИНН 7701234567",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "comment": "ИНН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "ogrn",
+      "checked_file": "business_license.txt",
+      "checked_value": "1027700123456",
+      "reference_value": "1027700123456",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "ОГРН: 1027700123456",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "ОГРН 1027700123456",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "comment": "ОГРН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "organization",
+      "checked_file": "business_license.txt",
+      "checked_value": "ООО \"МЕДТЕСТ\" ИНН",
+      "reference_value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+      "status": "mismatch",
+      "score": 58,
+      "checked_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МЕДТЕСТ\" ИНН",
+        "normalized_value": "ооо \"медтест\" инн",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Выдана ООО \"МЕДТЕСТ\" ИНН: 7701234567",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+        "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 класс риска",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Производитель: ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "comment": "Организация: расхождение с эталонным документом."
+    },
+    {
+      "fact_type": "risk_class",
+      "checked_file": "business_license.txt",
+      "checked_value": "",
+      "reference_value": "2а",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "risk_class",
+        "value": "2а",
+        "normalized_value": "2а",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Класс риска: 2а",
+        "extraction_method": "regex:risk_class",
+        "confidence": 95
+      },
+      "comment": "Класс риска: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "nkmi_code",
+      "checked_file": "business_license.txt",
+      "checked_value": "",
+      "reference_value": "123456",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "nkmi_code",
+        "value": "123456",
+        "normalized_value": "123456",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Код вида НКМИ: 123456",
+        "extraction_method": "regex:НКМИ",
+        "confidence": 95
+      },
+      "comment": "НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "license",
+      "checked_file": "business_license.txt",
+      "checked_value": "лицензия",
+      "reference_value": "",
+      "status": "missing_in_reference",
+      "score": 0,
+      "checked_evidence": {
+        "fact_type": "license",
+        "value": "лицензия",
+        "normalized_value": "лицензия",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Бизнес лицензия",
+        "extraction_method": "regex:license line",
+        "confidence": 95
+      },
+      "reference_evidence": null,
+      "comment": "Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка."
+    },
+    {
+      "fact_type": "license",
+      "checked_file": "business_license.txt",
+      "checked_value": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+      "reference_value": "",
+      "status": "missing_in_reference",
+      "score": 0,
+      "checked_evidence": {
+        "fact_type": "license",
+        "value": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+        "normalized_value": "лицензия л041 01137 77 00300000 от 12 05 2025",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Лицензия № Л041-01137-77/00300000 от 12.05.2025",
+        "extraction_method": "regex:license line",
+        "confidence": 95
+      },
+      "reference_evidence": null,
+      "comment": "Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка."
+    },
+    {
+      "fact_type": "address",
+      "checked_file": "business_license.txt",
+      "checked_value": "Адрес: город Москва, улица Ленина, дом 1",
+      "reference_value": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+      "status": "correct",
+      "score": 89,
+      "checked_evidence": {
+        "fact_type": "address",
+        "value": "Адрес: город Москва, улица Ленина, дом 1",
+        "normalized_value": "адрес город москва улица ленина дом 1",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Адрес: город Москва, улица Ленина, дом 1",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "address",
+        "value": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+        "normalized_value": "адрес производителя 115114 город москва улица примерная дом 1",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "comment": "Адресная строка: корректно, совпадение с эталоном по fuzzy-сравнению (89%)."
+    },
+    {
+      "fact_type": "phone",
+      "checked_file": "business_license.txt",
+      "checked_value": "+7 495 123-45-67",
+      "reference_value": "+7 495 123-45-67",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "phone",
+        "value": "+7 495 123-45-67",
+        "normalized_value": "74951234567",
+        "source_file": "business_license.txt",
+        "location": "document",
+        "quote": "Тел. +7 495 123-45-67",
+        "extraction_method": "regex:phone",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "phone",
+        "value": "+7 495 123-45-67",
+        "normalized_value": "74951234567",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Телефон: +7 495 123-45-67",
+        "extraction_method": "regex:phone",
+        "confidence": 95
+      },
+      "comment": "Телефон: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "email",
+      "checked_file": "business_license.txt",
+      "checked_value": "",
+      "reference_value": "info@medtech.example",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "email",
+        "value": "info@medtech.example",
+        "normalized_value": "info medtech example",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Email: info@medtech.example",
+        "extraction_method": "regex:email",
+        "confidence": 95
+      },
+      "comment": "Email: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "inn",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "7701234567",
+      "reference_value": "7701234567",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "oem_contract.txt",
+        "location": "document",
+        "quote": "Российский производитель: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "ИНН 7701234567",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "comment": "ИНН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "ogrn",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "1027700123456",
+      "reference_value": "1027700123456",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "oem_contract.txt",
+        "location": "document",
+        "quote": "Российский производитель: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "ОГРН 1027700123456",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "comment": "ОГРН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "organization",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Иностранная производственная площадка",
+      "reference_value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+      "status": "correct",
+      "score": 90,
+      "checked_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Иностранная производственная площадка",
+        "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 иностранная производственная площадка",
+        "source_file": "oem_contract.txt",
+        "location": "document",
+        "quote": "Российский производитель: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Иностранная производственная площадка: Shenzhen Medical Devices Factory Ltd.",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+        "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 класс риска",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Производитель: ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "comment": "Организация: корректно, совпадение с эталоном по fuzzy-сравнению (90%)."
+    },
+    {
+      "fact_type": "organization",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "Ltd. Адрес производственной площадки",
+      "reference_value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+      "status": "mismatch",
+      "score": 33,
+      "checked_evidence": {
+        "fact_type": "organization",
+        "value": "Ltd. Адрес производственной площадки",
+        "normalized_value": "ltd адрес производственной площадки",
+        "source_file": "oem_contract.txt",
+        "location": "document",
+        "quote": "Иностранная производственная площадка: Shenzhen Medical Devices Factory Ltd. Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+        "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 класс риска",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Производитель: ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "comment": "Организация: расхождение с эталонным документом."
+    },
+    {
+      "fact_type": "risk_class",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "",
+      "reference_value": "2а",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "risk_class",
+        "value": "2а",
+        "normalized_value": "2а",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Класс риска: 2а",
+        "extraction_method": "regex:risk_class",
+        "confidence": 95
+      },
+      "comment": "Класс риска: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "nkmi_code",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "",
+      "reference_value": "123456",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "nkmi_code",
+        "value": "123456",
+        "normalized_value": "123456",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Код вида НКМИ: 123456",
+        "extraction_method": "regex:НКМИ",
+        "confidence": 95
+      },
+      "comment": "НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "address",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+      "reference_value": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+      "status": "mismatch",
+      "score": 35,
+      "checked_evidence": {
+        "fact_type": "address",
+        "value": "Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+        "normalized_value": "адрес производственной площадки 48 hakgam daero 221 beon gil busan republic of korea",
+        "source_file": "oem_contract.txt",
+        "location": "document",
+        "quote": "Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "address",
+        "value": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+        "normalized_value": "адрес производителя 115114 город москва улица примерная дом 1",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "comment": "Адресная строка: расхождение с эталонным документом."
+    },
+    {
+      "fact_type": "phone",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "+7 495 123-45-67",
+      "reference_value": "+7 495 123-45-67",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "phone",
+        "value": "+7 495 123-45-67",
+        "normalized_value": "74951234567",
+        "source_file": "oem_contract.txt",
+        "location": "document",
+        "quote": "Phone: +7 495 123-45-67",
+        "extraction_method": "regex:phone",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "phone",
+        "value": "+7 495 123-45-67",
+        "normalized_value": "74951234567",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Телефон: +7 495 123-45-67",
+        "extraction_method": "regex:phone",
+        "confidence": 95
+      },
+      "comment": "Телефон: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "email",
+      "checked_file": "oem_contract.txt",
+      "checked_value": "oem@example.com",
+      "reference_value": "info@medtech.example",
+      "status": "mismatch",
+      "score": 63,
+      "checked_evidence": {
+        "fact_type": "email",
+        "value": "oem@example.com",
+        "normalized_value": "oem example com",
+        "source_file": "oem_contract.txt",
+        "location": "document",
+        "quote": "Email: oem@example.com",
+        "extraction_method": "regex:email",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "email",
+        "value": "info@medtech.example",
+        "normalized_value": "info medtech example",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Email: info@medtech.example",
+        "extraction_method": "regex:email",
+        "confidence": 95
+      },
+      "comment": "Email: расхождение с эталонным документом."
+    },
+    {
+      "fact_type": "inn",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "7701234567",
+      "reference_value": "7701234567",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "lease_agreement.txt",
+        "location": "document",
+        "quote": "Арендатор: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "inn",
+        "value": "7701234567",
+        "normalized_value": "7701234567",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "ИНН 7701234567",
+        "extraction_method": "regex:ИНН",
+        "confidence": 95
+      },
+      "comment": "ИНН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "ogrn",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "1027700123456",
+      "reference_value": "1027700123456",
+      "status": "correct",
+      "score": 100,
+      "checked_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "lease_agreement.txt",
+        "location": "document",
+        "quote": "Арендатор: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456.",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "ogrn",
+        "value": "1027700123456",
+        "normalized_value": "1027700123456",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "ОГРН 1027700123456",
+        "extraction_method": "regex:ОГРН",
+        "confidence": 95
+      },
+      "comment": "ОГРН: полное совпадение с эталонным документом."
+    },
+    {
+      "fact_type": "organization",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Адрес производственного помещения",
+      "reference_value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+      "status": "correct",
+      "score": 90,
+      "checked_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Адрес производственного помещения",
+        "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 адрес производственного помещения",
+        "source_file": "lease_agreement.txt",
+        "location": "document",
+        "quote": "Арендатор: ООО \"МедТех Производство\", ИНН 7701234567, ОГРН 1027700123456. Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "organization",
+        "value": "ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска",
+        "normalized_value": "ооо \"медтех производство\" инн 7701234567 огрн 1027700123456 класс риска",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Производитель: ООО \"МедТех Производство\". ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а",
+        "extraction_method": "regex:organization",
+        "confidence": 95
+      },
+      "comment": "Организация: корректно, совпадение с эталоном по fuzzy-сравнению (90%)."
+    },
+    {
+      "fact_type": "risk_class",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "",
+      "reference_value": "2а",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "risk_class",
+        "value": "2а",
+        "normalized_value": "2а",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Класс риска: 2а",
+        "extraction_method": "regex:risk_class",
+        "confidence": 95
+      },
+      "comment": "Класс риска: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "nkmi_code",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "",
+      "reference_value": "123456",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "nkmi_code",
+        "value": "123456",
+        "normalized_value": "123456",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Код вида НКМИ: 123456",
+        "extraction_method": "regex:НКМИ",
+        "confidence": 95
+      },
+      "comment": "НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "address",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+      "reference_value": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+      "status": "correct",
+      "score": 87,
+      "checked_evidence": {
+        "fact_type": "address",
+        "value": "Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+        "normalized_value": "адрес производственного помещения 115114 город москва улица примерная дом 1",
+        "source_file": "lease_agreement.txt",
+        "location": "document",
+        "quote": "Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "reference_evidence": {
+        "fact_type": "address",
+        "value": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+        "normalized_value": "адрес производителя 115114 город москва улица примерная дом 1",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+        "extraction_method": "regex:address line",
+        "confidence": 95
+      },
+      "comment": "Адресная строка: корректно, совпадение с эталоном по fuzzy-сравнению (87%)."
+    },
+    {
+      "fact_type": "phone",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "",
+      "reference_value": "+7 495 123-45-67",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "phone",
+        "value": "+7 495 123-45-67",
+        "normalized_value": "74951234567",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Телефон: +7 495 123-45-67",
+        "extraction_method": "regex:phone",
+        "confidence": 95
+      },
+      "comment": "Телефон: значение есть в эталоне, но не найдено в проверяемом документе."
+    },
+    {
+      "fact_type": "email",
+      "checked_file": "lease_agreement.txt",
+      "checked_value": "",
+      "reference_value": "info@medtech.example",
+      "status": "missing_in_document",
+      "score": 0,
+      "checked_evidence": null,
+      "reference_evidence": {
+        "fact_type": "email",
+        "value": "info@medtech.example",
+        "normalized_value": "info medtech example",
+        "source_file": "registration_application.txt",
+        "location": "document",
+        "quote": "Email: info@medtech.example",
+        "extraction_method": "regex:email",
+        "confidence": 95
+      },
+      "comment": "Email: значение есть в эталоне, но не найдено в проверяемом документе."
+    }
+  ],
+  "summary": {
+    "reference_file": "registration_application.txt",
+    "documents_total": 4,
+    "verification_rows_total": 27,
+    "status_counts": {
+      "correct": 12,
+      "mismatch": 4,
+      "missing_in_document": 9,
+      "missing_in_reference": 2
+    },
+    "extracted_counts_by_file": {
+      "registration_application.txt": {
+        "inn": 1,
+        "ogrn": 1,
+        "email": 1,
+        "phone": 1,
+        "nkmi_code": 1,
+        "risk_class": 1,
+        "organization": 1,
+        "address": 1
+      },
+      "business_license.txt": {
+        "inn": 1,
+        "ogrn": 1,
+        "phone": 1,
+        "license": 2,
+        "organization": 1,
+        "address": 1
+      },
+      "oem_contract.txt": {
+        "inn": 1,
+        "ogrn": 1,
+        "email": 1,
+        "phone": 1,
+        "organization": 2,
+        "address": 1
+      },
+      "lease_agreement.txt": {
+        "inn": 1,
+        "ogrn": 1,
+        "organization": 1,
+        "address": 1
+      }
+    },
+    "human_status": "Есть критические расхождения: 4. Требуется ручная проверка.",
+    "artifact_requirements_status": {
+      "reference_or_application": "found",
+      "oem_agreement": "found",
+      "rf_manufacturer_site_rights": "found",
+      "address_cross_check": "found"
+    },
+    "address_consistency_rows": 3
+  },
+  "artifact_requirements": [
+    {
+      "code": "reference_or_application",
+      "title": "Проверочный документ: заявление / ЕГРЮЛ / master-документ",
+      "status": "found",
+      "found_files": [
+        "registration_application.txt"
+      ],
+      "expected": "Должен быть документ, который считается источником правильных реквизитов: заявление, ЕГРЮЛ или иной master-документ.",
+      "comment": "По нему сверяются ИНН, ОГРН, организации, адреса, класс риска, НКМИ и иные реквизиты."
+    },
+    {
+      "code": "oem_agreement",
+      "title": "Если OEM — нужен договор между отечественным производителем и иностранной площадкой",
+      "status": "found",
+      "found_files": [
+        "oem_contract.txt"
+      ],
+      "expected": "Для OEM-пакета обязателен договор/соглашение между РФ-производителем и иностранной производственной площадкой.",
+      "comment": "В договоре проверяются стороны, адрес иностранной площадки, адрес РФ-производителя и связь с заявлением/ЕГРЮЛ."
+    },
+    {
+      "code": "rf_manufacturer_site_rights",
+      "title": "Если РФ-производитель — нужен документ на производственную площадку",
+      "status": "found",
+      "found_files": [
+        "lease_agreement.txt"
+      ],
+      "expected": "Если производство в аренде — договор аренды. Если в собственности — ЕГРН или документ о праве собственности/пользования.",
+      "comment": "Главная сверка: адрес производства из заявления/ЕГРЮЛ должен совпадать с адресом в договоре аренды, ЕГРН или документе собственности."
+    },
+    {
+      "code": "address_cross_check",
+      "title": "Обязательная сверка адресов во всех документах",
+      "status": "found",
+      "found_files": [
+        "registration_application.txt",
+        "business_license.txt",
+        "oem_contract.txt",
+        "lease_agreement.txt"
+      ],
+      "expected": "Адреса должны быть извлечены минимум из двух документов: эталона и проверяемого артефакта.",
+      "comment": "Если адреса отличаются, отчет показывает расхождение и источник каждого адреса."
+    }
+  ],
+  "address_consistency": [
+    {
+      "left_file": "business_license.txt",
+      "left_address": "Адрес: город Москва, улица Ленина, дом 1",
+      "right_file": "registration_application.txt",
+      "right_address": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+      "score": 89,
+      "status": "correct",
+      "comment": "Адрес совпадает с эталоном."
+    },
+    {
+      "left_file": "oem_contract.txt",
+      "left_address": "Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.",
+      "right_file": "registration_application.txt",
+      "right_address": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+      "score": 35,
+      "status": "mismatch",
+      "comment": "Адрес отличается от эталона: требуется ручная проверка адреса производства/площадки."
+    },
+    {
+      "left_file": "lease_agreement.txt",
+      "left_address": "Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.",
+      "right_file": "registration_application.txt",
+      "right_address": "Адрес производителя: 115114, город Москва, улица Примерная, дом 1.",
+      "score": 87,
+      "status": "correct",
+      "comment": "Адрес совпадает с эталоном."
+    }
+  ]
+}

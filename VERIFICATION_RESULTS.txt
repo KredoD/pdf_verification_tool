@@ -1,0 +1,16 @@
+VNIIMT Primary Document Checker v1.2
+
+Automated checks performed before handoff:
+
+1) Unit/smoke tests:
+   Command: python -m pytest -q
+   Result: 2 passed
+
+2) CLI demo run:
+   Command:
+   python scripts/run_local_check.py --project-name "Demo handoff check" --reference sample_data/registration_application.txt --documents sample_data/business_license.txt sample_data/oem_contract.txt sample_data/lease_agreement.txt --out output/handoff_demo
+   Result: report.html, report.docx, report.json generated successfully
+
+3) CTO Word document render:
+   File: docs/VNIIMT_Primary_Document_Checker_v1_2_CTO_handoff_explained_code.docx
+   Result: rendered successfully to 46 pages for visual QA

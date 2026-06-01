@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Отчет проверки ВНИИМТ</title>
+<style>
+:root { --ink:#10232b; --line:#dfe7ea; --brand:#0f4a55; --ok:#d9ead3; --warn:#fff2cc; --bad:#f4cccc; --miss:#fce5cd; }
+body { margin:0; font-family:Inter, Arial, sans-serif; color:var(--ink); background:#f6f8f8; }
+.page { max-width:1480px; margin:0 auto; padding:28px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:22px; padding:22px; margin:18px 0; box-shadow:0 12px 32px rgba(16,35,43,.08); }
+h1 { margin:0 0 12px; }
+.actions a { display:inline-block; padding:12px 16px; border-radius:999px; background:var(--brand); color:white; text-decoration:none; margin-right:10px; font-weight:800; }
+table { border-collapse:collapse; width:100%; font-size:13px; }
+th,td { border:1px solid var(--line); padding:8px; vertical-align:top; }
+th { background:#e9eef3; text-align:left; }
+.correct td:first-child { background:var(--ok); }
+.possible_match td:first-child { background:var(--warn); }
+.mismatch td:first-child { background:var(--bad); }
+.missing_in_reference td:first-child,.missing_in_document td:first-child { background:var(--miss); }
+.found td:first-child { background:var(--ok); }
+.missing td:first-child { background:var(--bad); }
+.needs_review td:first-child { background:var(--warn); }
+.badge { display:inline-block; background:#eef4f5; border-radius:999px; padding:7px 11px; margin:4px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <h1>Отчет первичной проверки документации для ВНИИМТ</h1>
+    <p><b>Проект:</b> Demo handoff check</p>
+    <p><b>Эталонный документ:</b> registration_application.txt</p>
+    <p><b>Итог:</b> Есть критические расхождения: 4. Требуется ручная проверка.</p>
+    <div>
+      <span class="badge">Корректно: 12</span><span class="badge">Расхождение: 4</span><span class="badge">Нет в документе: 9</span><span class="badge">Нет в эталоне: 2</span>
+    </div>
+    <p class="actions">
+      <a href="/api/projects/20f1e720bdc8/download/docx">Скачать DOCX</a>
+      <a href="/api/projects/20f1e720bdc8/download/json">Скачать JSON</a>
+    </p>
+  </div>
+  <div class="card">
+    <h2>Что извлек скрипт</h2>
+    <table><thead><tr><th>Документ</th><th>Роль</th><th>Символов текста</th><th>Извлечено</th></tr></thead><tbody><tr><td>registration_application.txt</td><td>REFERENCE_EGRUL_OR_MASTER</td><td>341</td><td>ИНН: 1, ОГРН: 1, Email: 1, Телефон: 1, НКМИ / код вида: 1, Класс риска: 1, Организация: 1, Адресная строка: 1</td></tr><tr><td>business_license.txt</td><td>BUSINESS_LICENSE</td><td>183</td><td>ИНН: 1, ОГРН: 1, Телефон: 1, Лицензия / разрешение: 2, Организация: 1, Адресная строка: 1</td></tr><tr><td>oem_contract.txt</td><td>OEM_SITE</td><td>468</td><td>ИНН: 1, ОГРН: 1, Email: 1, Телефон: 1, Организация: 2, Адресная строка: 1</td></tr><tr><td>lease_agreement.txt</td><td>LEASE_AGREEMENT</td><td>301</td><td>ИНН: 1, ОГРН: 1, Организация: 1, Адресная строка: 1</td></tr></tbody></table>
+  </div>
+
+  <div class="card">
+    <h2>Проверочные артефакты по типу пакета</h2>
+    <table><thead><tr><th>Статус</th><th>Правило</th><th>Найденные файлы</th><th>Что требуется</th><th>Комментарий</th></tr></thead><tbody><tr class="found"><td><b>Найдено</b></td><td>Проверочный документ: заявление / ЕГРЮЛ / master-документ</td><td>registration_application.txt</td><td>Должен быть документ, который считается источником правильных реквизитов: заявление, ЕГРЮЛ или иной master-документ.</td><td>По нему сверяются ИНН, ОГРН, организации, адреса, класс риска, НКМИ и иные реквизиты.</td></tr><tr class="found"><td><b>Найдено</b></td><td>Если OEM — нужен договор между отечественным производителем и иностранной площадкой</td><td>oem_contract.txt</td><td>Для OEM-пакета обязателен договор/соглашение между РФ-производителем и иностранной производственной площадкой.</td><td>В договоре проверяются стороны, адрес иностранной площадки, адрес РФ-производителя и связь с заявлением/ЕГРЮЛ.</td></tr><tr class="found"><td><b>Найдено</b></td><td>Если РФ-производитель — нужен документ на производственную площадку</td><td>lease_agreement.txt</td><td>Если производство в аренде — договор аренды. Если в собственности — ЕГРН или документ о праве собственности/пользования.</td><td>Главная сверка: адрес производства из заявления/ЕГРЮЛ должен совпадать с адресом в договоре аренды, ЕГРН или документе собственности.</td></tr><tr class="found"><td><b>Найдено</b></td><td>Обязательная сверка адресов во всех документах</td><td>registration_application.txt; business_license.txt; oem_contract.txt; lease_agreement.txt</td><td>Адреса должны быть извлечены минимум из двух документов: эталона и проверяемого артефакта.</td><td>Если адреса отличаются, отчет показывает расхождение и источник каждого адреса.</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h2>Отдельная сверка адресов</h2>
+    <table><thead><tr><th>Статус</th><th>Документ</th><th>Адрес в документе</th><th>Адрес в эталоне</th><th>Сходство</th><th>Комментарий</th></tr></thead><tbody><tr class="correct"><td><b>Корректно</b></td><td>business_license.txt</td><td>Адрес: город Москва, улица Ленина, дом 1</td><td>Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</td><td>89%</td><td>Адрес совпадает с эталоном.</td></tr><tr class="mismatch"><td><b>Расхождение</b></td><td>oem_contract.txt</td><td>Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.</td><td>Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</td><td>35%</td><td>Адрес отличается от эталона: требуется ручная проверка адреса производства/площадки.</td></tr><tr class="correct"><td><b>Корректно</b></td><td>lease_agreement.txt</td><td>Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.</td><td>Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</td><td>87%</td><td>Адрес совпадает с эталоном.</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h2>Проверка соответствия</h2>
+    <table><thead><tr><th>Статус</th><th>Поле</th><th>Документ</th><th>Значение в документе</th><th>Значение в эталоне</th><th>Сходство</th><th>Откуда взято</th><th>Комментарий</th></tr></thead><tbody>
+        <tr class="mismatch">
+          <td><b>Расхождение</b></td>
+          <td>Организация</td>
+          <td>business_license.txt</td>
+          <td>ООО &quot;МЕДТЕСТ&quot; ИНН</td>
+          <td>ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска</td>
+          <td>58%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Выдана ООО &quot;МЕДТЕСТ&quot; ИНН: 7701234567</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Производитель: ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а</div>
+          </td>
+          <td>Организация: расхождение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="mismatch">
+          <td><b>Расхождение</b></td>
+          <td>Адресная строка</td>
+          <td>oem_contract.txt</td>
+          <td>Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.</td>
+          <td>Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</td>
+          <td>35%</td>
+          <td>
+            <div><b>Проверяемый:</b> oem_contract.txt; document; фрагмент: Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</div>
+          </td>
+          <td>Адресная строка: расхождение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="mismatch">
+          <td><b>Расхождение</b></td>
+          <td>Email</td>
+          <td>oem_contract.txt</td>
+          <td>oem@example.com</td>
+          <td>info@medtech.example</td>
+          <td>63%</td>
+          <td>
+            <div><b>Проверяемый:</b> oem_contract.txt; document; фрагмент: Email: oem@example.com</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Email: info@medtech.example</div>
+          </td>
+          <td>Email: расхождение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="mismatch">
+          <td><b>Расхождение</b></td>
+          <td>Организация</td>
+          <td>oem_contract.txt</td>
+          <td>Ltd. Адрес производственной площадки</td>
+          <td>ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска</td>
+          <td>33%</td>
+          <td>
+            <div><b>Проверяемый:</b> oem_contract.txt; document; фрагмент: Иностранная производственная площадка: Shenzhen Medical Devices Factory Ltd. Адрес производственной площадки: 48 Hakgam-daero 221 beon-gil, Busan, Republic of Korea.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Производитель: ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а</div>
+          </td>
+          <td>Организация: расхождение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Email</td>
+          <td>business_license.txt</td>
+          <td></td>
+          <td>info@medtech.example</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Email: info@medtech.example</div>
+          </td>
+          <td>Email: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>НКМИ / код вида</td>
+          <td>business_license.txt</td>
+          <td></td>
+          <td>123456</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Код вида НКМИ: 123456</div>
+          </td>
+          <td>НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Класс риска</td>
+          <td>business_license.txt</td>
+          <td></td>
+          <td>2а</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Класс риска: 2а</div>
+          </td>
+          <td>Класс риска: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Email</td>
+          <td>lease_agreement.txt</td>
+          <td></td>
+          <td>info@medtech.example</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Email: info@medtech.example</div>
+          </td>
+          <td>Email: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>НКМИ / код вида</td>
+          <td>lease_agreement.txt</td>
+          <td></td>
+          <td>123456</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Код вида НКМИ: 123456</div>
+          </td>
+          <td>НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Телефон</td>
+          <td>lease_agreement.txt</td>
+          <td></td>
+          <td>+7 495 123-45-67</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Телефон: +7 495 123-45-67</div>
+          </td>
+          <td>Телефон: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Класс риска</td>
+          <td>lease_agreement.txt</td>
+          <td></td>
+          <td>2а</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Класс риска: 2а</div>
+          </td>
+          <td>Класс риска: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>НКМИ / код вида</td>
+          <td>oem_contract.txt</td>
+          <td></td>
+          <td>123456</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Код вида НКМИ: 123456</div>
+          </td>
+          <td>НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Класс риска</td>
+          <td>oem_contract.txt</td>
+          <td></td>
+          <td>2а</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Класс риска: 2а</div>
+          </td>
+          <td>Класс риска: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_reference">
+          <td><b>Нет в эталоне</b></td>
+          <td>Лицензия / разрешение</td>
+          <td>business_license.txt</td>
+          <td>лицензия</td>
+          <td></td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Бизнес лицензия</div>
+            <div><b>Эталон:</b> —</div>
+          </td>
+          <td>Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка.</td>
+        </tr>
+        
+        <tr class="missing_in_reference">
+          <td><b>Нет в эталоне</b></td>
+          <td>Лицензия / разрешение</td>
+          <td>business_license.txt</td>
+          <td>Лицензия № Л041-01137-77/00300000 от 12.05.2025</td>
+          <td></td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Лицензия № Л041-01137-77/00300000 от 12.05.2025</div>
+            <div><b>Эталон:</b> —</div>
+          </td>
+          <td>Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>Адресная строка</td>
+          <td>business_license.txt</td>
+          <td>Адрес: город Москва, улица Ленина, дом 1</td>
+          <td>Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</td>
+          <td>89%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Адрес: город Москва, улица Ленина, дом 1</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</div>
+          </td>
+          <td>Адресная строка: корректно, совпадение с эталоном по fuzzy-сравнению (89%).</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ИНН</td>
+          <td>business_license.txt</td>
+          <td>7701234567</td>
+          <td>7701234567</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: ИНН: 7701234567</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: ИНН 7701234567</div>
+          </td>
+          <td>ИНН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ОГРН</td>
+          <td>business_license.txt</td>
+          <td>1027700123456</td>
+          <td>1027700123456</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: ОГРН: 1027700123456</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: ОГРН 1027700123456</div>
+          </td>
+          <td>ОГРН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>Телефон</td>
+          <td>business_license.txt</td>
+          <td>+7 495 123-45-67</td>
+          <td>+7 495 123-45-67</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Тел. +7 495 123-45-67</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Телефон: +7 495 123-45-67</div>
+          </td>
+          <td>Телефон: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>Адресная строка</td>
+          <td>lease_agreement.txt</td>
+          <td>Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.</td>
+          <td>Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</td>
+          <td>87%</td>
+          <td>
+            <div><b>Проверяемый:</b> lease_agreement.txt; document; фрагмент: Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Адрес производителя: 115114, город Москва, улица Примерная, дом 1.</div>
+          </td>
+          <td>Адресная строка: корректно, совпадение с эталоном по fuzzy-сравнению (87%).</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ИНН</td>
+          <td>lease_agreement.txt</td>
+          <td>7701234567</td>
+          <td>7701234567</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> lease_agreement.txt; document; фрагмент: Арендатор: ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: ИНН 7701234567</div>
+          </td>
+          <td>ИНН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ОГРН</td>
+          <td>lease_agreement.txt</td>
+          <td>1027700123456</td>
+          <td>1027700123456</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> lease_agreement.txt; document; фрагмент: Арендатор: ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: ОГРН 1027700123456</div>
+          </td>
+          <td>ОГРН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>Организация</td>
+          <td>lease_agreement.txt</td>
+          <td>ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456. Адрес производственного помещения</td>
+          <td>ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска</td>
+          <td>90%</td>
+          <td>
+            <div><b>Проверяемый:</b> lease_agreement.txt; document; фрагмент: Арендатор: ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456. Адрес производственного помещения: 115114, город Москва, улица Примерная, дом 1.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Производитель: ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а</div>
+          </td>
+          <td>Организация: корректно, совпадение с эталоном по fuzzy-сравнению (90%).</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ИНН</td>
+          <td>oem_contract.txt</td>
+          <td>7701234567</td>
+          <td>7701234567</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> oem_contract.txt; document; фрагмент: Российский производитель: ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: ИНН 7701234567</div>
+          </td>
+          <td>ИНН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ОГРН</td>
+          <td>oem_contract.txt</td>
+          <td>1027700123456</td>
+          <td>1027700123456</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> oem_contract.txt; document; фрагмент: Российский производитель: ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: ОГРН 1027700123456</div>
+          </td>
+          <td>ОГРН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>Организация</td>
+          <td>oem_contract.txt</td>
+          <td>ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456. Иностранная производственная площадка</td>
+          <td>ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска</td>
+          <td>90%</td>
+          <td>
+            <div><b>Проверяемый:</b> oem_contract.txt; document; фрагмент: Российский производитель: ООО &quot;МедТех Производство&quot;, ИНН 7701234567, ОГРН 1027700123456. Иностранная производственная площадка: Shenzhen Medical Devices Factory Ltd.</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Производитель: ООО &quot;МедТех Производство&quot;. ИНН 7701234567 ОГРН 1027700123456 Класс риска: 2а</div>
+          </td>
+          <td>Организация: корректно, совпадение с эталоном по fuzzy-сравнению (90%).</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>Телефон</td>
+          <td>oem_contract.txt</td>
+          <td>+7 495 123-45-67</td>
+          <td>+7 495 123-45-67</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> oem_contract.txt; document; фрагмент: Phone: +7 495 123-45-67</div>
+            <div><b>Эталон:</b> registration_application.txt; document; фрагмент: Телефон: +7 495 123-45-67</div>
+          </td>
+          <td>Телефон: полное совпадение с эталонным документом.</td>
+        </tr>
+        </tbody></table>
+  </div>
+</div>
+</body>
+</html>

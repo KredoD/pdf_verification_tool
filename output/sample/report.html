@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Отчет проверки ВНИИМТ</title>
+<style>
+:root { --ink:#10232b; --line:#dfe7ea; --brand:#0f4a55; --ok:#d9ead3; --warn:#fff2cc; --bad:#f4cccc; --miss:#fce5cd; }
+body { margin:0; font-family:Inter, Arial, sans-serif; color:var(--ink); background:#f6f8f8; }
+.page { max-width:1480px; margin:0 auto; padding:28px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:22px; padding:22px; margin:18px 0; box-shadow:0 12px 32px rgba(16,35,43,.08); }
+h1 { margin:0 0 12px; }
+.actions a { display:inline-block; padding:12px 16px; border-radius:999px; background:var(--brand); color:white; text-decoration:none; margin-right:10px; font-weight:800; }
+table { border-collapse:collapse; width:100%; font-size:13px; }
+th,td { border:1px solid var(--line); padding:8px; vertical-align:top; }
+th { background:#e9eef3; text-align:left; }
+.correct td:first-child { background:var(--ok); }
+.possible_match td:first-child { background:var(--warn); }
+.mismatch td:first-child { background:var(--bad); }
+.missing_in_reference td:first-child,.missing_in_document td:first-child { background:var(--miss); }
+.badge { display:inline-block; background:#eef4f5; border-radius:999px; padding:7px 11px; margin:4px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <h1>Отчет первичной проверки документации для ВНИИМТ</h1>
+    <p><b>Проект:</b> Демо ВНИИМТ</p>
+    <p><b>Эталонный документ:</b> egrul_reference.txt</p>
+    <p><b>Итог:</b> Есть отсутствующие значения: 6. Нужно уточнить пакет документов.</p>
+    <div>
+      <span class="badge">Корректно: 3</span><span class="badge">Нет в эталоне: 3</span><span class="badge">Нет в документе: 3</span><span class="badge">Похоже, нужна проверка: 1</span>
+    </div>
+    <p class="actions">
+      <a href="/api/projects/99942e0fa0b8/download/docx">Скачать DOCX</a>
+      <a href="/api/projects/99942e0fa0b8/download/json">Скачать JSON</a>
+    </p>
+  </div>
+  <div class="card">
+    <h2>Что извлек скрипт</h2>
+    <table><thead><tr><th>Документ</th><th>Роль</th><th>Символов текста</th><th>Извлечено</th></tr></thead><tbody><tr><td>egrul_reference.txt</td><td>REFERENCE_EGRUL_OR_MASTER</td><td>231</td><td>ИНН: 1, ОГРН: 1, Email: 1, Телефон: 1, НКМИ / код вида: 1, Класс риска: 1, Адресная строка: 1</td></tr><tr><td>business_license.txt</td><td>BUSINESS_LICENSE</td><td>183</td><td>ИНН: 1, ОГРН: 1, Телефон: 1, Лицензия / разрешение: 2, Организация: 1, Адресная строка: 1</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h2>Проверка соответствия</h2>
+    <table><thead><tr><th>Статус</th><th>Поле</th><th>Документ</th><th>Значение в документе</th><th>Значение в эталоне</th><th>Сходство</th><th>Откуда взято</th><th>Комментарий</th></tr></thead><tbody>
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Email</td>
+          <td>business_license.txt</td>
+          <td></td>
+          <td>info@medtest.ru</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> egrul_reference.txt; document; фрагмент: Email: info@medtest.ru</div>
+          </td>
+          <td>Email: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>НКМИ / код вида</td>
+          <td>business_license.txt</td>
+          <td></td>
+          <td>120550</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> egrul_reference.txt; document; фрагмент: Код вида НКМИ 120550</div>
+          </td>
+          <td>НКМИ / код вида: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_document">
+          <td><b>Нет в документе</b></td>
+          <td>Класс риска</td>
+          <td>business_license.txt</td>
+          <td></td>
+          <td>2а</td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> —</div>
+            <div><b>Эталон:</b> egrul_reference.txt; document; фрагмент: Класс риска 2а</div>
+          </td>
+          <td>Класс риска: значение есть в эталоне, но не найдено в проверяемом документе.</td>
+        </tr>
+        
+        <tr class="missing_in_reference">
+          <td><b>Нет в эталоне</b></td>
+          <td>Лицензия / разрешение</td>
+          <td>business_license.txt</td>
+          <td>лицензия</td>
+          <td></td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Бизнес лицензия</div>
+            <div><b>Эталон:</b> —</div>
+          </td>
+          <td>Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка.</td>
+        </tr>
+        
+        <tr class="missing_in_reference">
+          <td><b>Нет в эталоне</b></td>
+          <td>Лицензия / разрешение</td>
+          <td>business_license.txt</td>
+          <td>Лицензия № Л041-01137-77/00300000 от 12.05.2025</td>
+          <td></td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Лицензия № Л041-01137-77/00300000 от 12.05.2025</div>
+            <div><b>Эталон:</b> —</div>
+          </td>
+          <td>Лицензия / разрешение: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка.</td>
+        </tr>
+        
+        <tr class="missing_in_reference">
+          <td><b>Нет в эталоне</b></td>
+          <td>Организация</td>
+          <td>business_license.txt</td>
+          <td>ООО &quot;МЕДТЕСТ&quot; ИНН</td>
+          <td></td>
+          <td>0%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Выдана ООО &quot;МЕДТЕСТ&quot; ИНН: 7701234567</div>
+            <div><b>Эталон:</b> —</div>
+          </td>
+          <td>Организация: значение найдено в проверяемом документе, но в эталоне такого значения нет. Требуется ручная оценка.</td>
+        </tr>
+        
+        <tr class="possible_match">
+          <td><b>Похоже, нужна проверка</b></td>
+          <td>Адресная строка</td>
+          <td>business_license.txt</td>
+          <td>Адрес: город Москва, улица Ленина, дом 1</td>
+          <td>Адрес: 123456, г. Москва, ул. Ленина, д. 1</td>
+          <td>77%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Адрес: город Москва, улица Ленина, дом 1</div>
+            <div><b>Эталон:</b> egrul_reference.txt; document; фрагмент: Адрес: 123456, г. Москва, ул. Ленина, д. 1</div>
+          </td>
+          <td>Адресная строка: частичное совпадение (77%). Нужно проверить вручную: возможны сокращения, OCR или разные формулировки.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ИНН</td>
+          <td>business_license.txt</td>
+          <td>7701234567</td>
+          <td>7701234567</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: ИНН: 7701234567</div>
+            <div><b>Эталон:</b> egrul_reference.txt; document; фрагмент: ИНН 7701234567</div>
+          </td>
+          <td>ИНН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>ОГРН</td>
+          <td>business_license.txt</td>
+          <td>1027700123456</td>
+          <td>1027700123456</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: ОГРН: 1027700123456</div>
+            <div><b>Эталон:</b> egrul_reference.txt; document; фрагмент: ОГРН 1027700123456</div>
+          </td>
+          <td>ОГРН: полное совпадение с эталонным документом.</td>
+        </tr>
+        
+        <tr class="correct">
+          <td><b>Корректно</b></td>
+          <td>Телефон</td>
+          <td>business_license.txt</td>
+          <td>+7 495 123-45-67</td>
+          <td>+7 (495) 123-45-67</td>
+          <td>100%</td>
+          <td>
+            <div><b>Проверяемый:</b> business_license.txt; document; фрагмент: Тел. +7 495 123-45-67</div>
+            <div><b>Эталон:</b> egrul_reference.txt; document; фрагмент: Телефон: +7 (495) 123-45-67</div>
+          </td>
+          <td>Телефон: полное совпадение с эталонным документом.</td>
+        </tr>
+        </tbody></table>
+  </div>
+</div>
+</body>
+</html>
